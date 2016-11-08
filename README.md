@@ -1,5 +1,7 @@
 # Tubeclip
 
+! This is updated version of [youtube_it](https://github.com/kylejginavan/youtube_it)
+
 tubeclip is the most complete Ruby client for the YouTube GData API. It provides an easy way to access the latest and most complete access to YouTube's video API. In comparison with the earlier Youtube interfaces, this new API and library offers much-improved flexibility around executing complex search queries to obtain well-targeted video search results.  In addition, standard video management  including but not limited to uploading, deleting, updating, like, dislike, ratings and comments.
   
 ## Installation
