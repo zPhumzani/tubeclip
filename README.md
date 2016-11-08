@@ -1,6 +1,6 @@
 # Tubeclip
 
-!This is updated version of [youtube_it](https://github.com/kylejginavan/youtube_it)
+Ok! Lets say there is a awesome ruby gem you want to use in your project and it haven't been updated for a long time. This is a ruby 2.3.1 and rails 5 updated version of [youtube_it](https://github.com/kylejginavan/youtube_it).
 
 tubeclip is the most complete Ruby client for the YouTube GData API. It provides an easy way to access the latest and most complete access to YouTube's video API. In comparison with the earlier Youtube interfaces, this new API and library offers much-improved flexibility around executing complex search queries to obtain well-targeted video search results.  In addition, standard video management  including but not limited to uploading, deleting, updating, like, dislike, ratings and comments.
   
@@ -24,14 +24,10 @@ Or install it yourself as:
 
 Note: Do forget to create a youtube account, create a developer key here http://code.google.com/apis/youtube/dashboard and tubeclip supports ClientLogin(YouTube account), OAuth or AuthSub authentication methods.
 
-## Example Rails 5 App
-
-You can get an example how you can use tubeclip with Rails 3 here: http://github.com/chebyte/tubeclip_rails_app_example
-
 ## DEMO
 
-You can see to tubeclip in action here: http://tubeclip.heroku.com
-
+You can checkout [youtube_it](https://github.com/kylejginavan/youtube_it) demo
+ 
 ## ESTABLISHING A CLIENT
 
 Important: The Account Authentication API for OAuth 1.0, AuthSub and Client Login has been officially deprecated as of April 20, 2012. It will continue to work as per our deprecation policy(https://developers.google.com/accounts/terms), but we encourage you to migrate to OAuth 2.0 authentication as soon as possible. If you are building a new application, you should use OAuth 2.0 authentication.
