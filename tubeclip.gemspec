@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["zphumzani@gmail.com"]
 
   spec.summary       = %q{Upload, delete, update, comment on youtube videos all from one gem.}
-  spec.description   = %q{The most complete Ruby wrapper for youtube api's}
+  spec.description   = %q{Ruby wrapper for youtube api's}
   spec.homepage      = "https://github.com/zPhumzani/tubeclip"
   spec.license       = "MIT"
 

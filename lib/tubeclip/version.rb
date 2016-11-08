@@ -1,3 +1,3 @@
-module Tubeclip
+class Tubeclip
   VERSION = "0.1.0"
 end
