@@ -1,4 +1,4 @@
-# Tubeclip
+# Tubeclip [![Gem Version](https://badge.fury.io/rb/tubeclip.svg)](https://badge.fury.io/rb/tubeclip)
 
 Ok! Lets say there is a awesome ruby gem you want to use in your project and it haven't been updated for a long time. This is a ruby 2.3.1 and rails 5 updated version of [youtube_it](https://github.com/kylejginavan/youtube_it).
 
