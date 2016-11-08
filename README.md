@@ -26,7 +26,7 @@ Note: Do forget to create a youtube account, create a developer key here http://
 
 ## DEMO
 
-You can checkout this [SitePoint](https://www.sitepoint.com/youtube-rails/) Youtube on rails tutorial.
+You can checkout this [**SitePoint** Youtube on rails tutorial](https://www.sitepoint.com/youtube-rails/) .
 Please use tubeclip gem or just use [youtube_it](https://github.com/kylejginavan/youtube_it) gem and rails 3/4
  
 ## ESTABLISHING A CLIENT
