@@ -12,15 +12,13 @@ gem 'tubeclip'
 
 And then execute:
 
-  
-
-     $ bundle
+    
+    $ bundle
 
 Or install it yourself as:
 
-  
-
-     $ gem install tubeclip
+    
+    $ gem install tubeclip
 
 Note: Do forget to create a youtube account, create a developer key here http://code.google.com/apis/youtube/dashboard and tubeclip supports ClientLogin(YouTube account), OAuth or AuthSub authentication methods.
 
@@ -39,7 +37,6 @@ Important: The Account Authentication API for OAuth 1.0, AuthSub and Client Logi
 Creating a client:
 
     $ require 'tubeclip'
-
     $ client = Tubeclip::Client.new
 
 Client with developer key:
@@ -51,14 +48,12 @@ Client with youtube account and developer key:
     $ client = Tubeclip::Client.new(:username => "youtube_username", :password =>  "youtube_passwd", :dev_key => "developer_key")
 
 Client with AuthSub:
-  
 
-     $ client = Tubeclip::AuthSubClient.new(:token => "token" , :dev_key => "developer_key")
+    $ client = Tubeclip::AuthSubClient.new(:token => "token" , :dev_key => "developer_key")
 
 Client with OAuth:
 
     $ client = Tubeclip::OAuthClient.new("consumer_key", "consumer_secret", "youtube_username", "developer_key")
-
     $ client.authorize_from_access("access_token", "access_secret")
 
 Client with OAuth2:
@@ -67,7 +62,6 @@ Client with OAuth2:
 
 If your access token is still valid (be careful, access tokens may only be valid for about 1 hour), you can use the client directly. If you want to refresh the access token using the refresh token just do:
 
-
     $ client.refresh_access_token!
 
 * You can see more about oauth 2 in the wiki: https://github.com/kylejginavan/tubeclip/wiki/How-To:-Use-OAuth-2
@@ -75,9 +69,7 @@ If your access token is still valid (be careful, access tokens may only be valid
 ## PROFILES
   you can use multiple profiles in the same account like that
 
-
     $ profiles = client.profiles(['username1','username2']) 
-
     $ profiles['username1'].username, "username1"
 
 ## VIDEO QUERIES
@@ -87,59 +79,35 @@ Note:  Each type of client enables searching capabilities.
 Basic Queries:
 
     $ client.videos_by(:query => "penguin")
-
     $ client.videos_by(:query => "penguin", :page => 2, :per_page => 15)
-
     $ client.videos_by(:query => "penguin", :restriction => "DE")
-
     $ client.videos_by(:query => "penguin",  :author => "liz")
-
     $ client.videos_by(:tags => ['tiger', 'leopard'])
-
     $ client.videos_by(:categories => [:news, :sports])
-
     $ client.videos_by(:categories => [:news, :sports], :tags => ['soccer', 'football'])
-
     $ client.videos_by(:user => 'liz')
-
     $ client.videos_by(:favorites, :user => 'liz')
-
     $ client.video_by("FQK1URcxmb4")
-
     $ client.video_by("https://www.youtube.com/watch?v=QsbmrCtiEUU")  
-
     $ client.video_by_user("chebyte","FQK1URcxmb4")
 
 Standard Queries:
 
     $ client.videos_by(:most_viewed)
-
     $ client.videos_by(:most_linked, :page => 3)
-
     $ client.videos_by(:top_rated, :time => :today)
-
     $ client.get_all_videos(:top_rated, :time => :today)
-
     $ client.videos_by(:top_rated,  :region => "RU", :category => "News")
 Advanced Queries (with boolean operators OR (either), AND (include), NOT (exclude)):
-
     $ client.videos_by(:categories => { :either => [:news, :sports], :exclude => [:comedy] }, :tags => { :include => ['football'], :exclude => ['soccer'] })
 
 
 Custom Query Params
  You can use custom query params like that:
 
- 
-
     $ client.videos_by(:query => "penguin", :safe_search => "strict")
- 
-
     $ client.videos_by(:query => "penguin", :duration => "long")
- 
-
     $ client.videos_by(:query => "penguin", :hd => "true")
- 
-
     $ client.videos_by(:query => "penguin", :region => "AR")
 
  you can see more options here https://developers.google.com/youtube/2.0/reference#yt_format
@@ -152,19 +120,16 @@ Fields Parameter(experimental features):
   Filter by date
 
     $ client.videos_by(:fields => {:published  => (Date.today)})
-
     $ client.videos_by(:fields => {:recorded   => (Date.today)})  
 
   Filter by date with range
 
     $ client.videos_by(:fields => {:published  => ((Date.today - 30)..(Date.today))})
-
     $ client.videos_by(:fields => {:recorded   => ((Date.today - 30)..(Date.today))})  
   
 Note: These queries do not find private videos! Use these methods instead:
 
     $ client.my_video("FQK1URcxmb4")
-
     $ client.my_videos(:query => "penguin")
 
 ## VIDEO MANAGEMENT
@@ -271,7 +236,6 @@ List Playlists:
 
   for example you can get the videos of your playlist ordered by title
 
-
     $ client.playlists(user, "title")
 
   you can see more about options for order_by here: https://developers.google.com/youtube/2.0/reference#orderbysp
@@ -283,7 +247,6 @@ Select Playlist:
 Select All Videos From A Playlist:
 
     $ playlist = client.playlist(playlist_id)
-
     $ playlist.videos
 
 Create Playlist:
@@ -309,7 +272,6 @@ Update Position Video From Playlist:
 Select All Videos From your Watch Later Playlist:
 
     $ watcher_later = client.watcherlater(user) #default: current user
-
     $ watcher_later.videos
 
 Add Video To Watcher Later Playlist:
@@ -324,7 +286,6 @@ Remove Video From Watch Later Playlist:
 List Related Videos
 
     $ video = client.video_by("https://www.youtube.com/watch?v=QsbmrCtiEUU&feature=player_embedded")
-
     $ video.related.videos
 
 Add Response Video
@@ -338,13 +299,11 @@ Delete Response Video
 List Response Videos
 
     $ video = client.video_by("https://www.youtube.com/watch?v=QsbmrCtiEUU&feature=player_embedded")
-
     $ video.responses.videos
 
   
 ## BATCH VIDEOS
 you can list many videos at the same time
-
 
     $ client.videos(['video_id_1', 'video_id_2',...])
 
@@ -381,7 +340,6 @@ you can list many videos at the same time
 ## Video Upload From Browser:
 
 When uploading a video from your browser you need make a form upload with the followings params:
-
     $ upload_token(params, nexturl)
 params  => params like :title => "title", :description => "description", :category => "People", :keywords => ["test"]
 nexturl => redirect to this url after upload
@@ -403,7 +361,6 @@ View (upload.html.erb)
 ## WIDESCREEN VIDEOS
 
 If the videos has support for widescreen:
-
     $ video.embed_html_with_width(1280)
 
 Note: you can specify width or just use the default of 1280.
@@ -413,21 +370,17 @@ Note: you can specify width or just use the default of 1280.
 Now you can embed videos without use flash using html5, usefull for mobiles that not support flash but has html5 browser
 
 You can specify these options
-
     $ video.embed_html5({:class => 'video-player', :id => 'my-video', :width => '425', :height => '350', :frameborder => '1', :url_params => {:option_one => "value", :option_two => "value"},
   fullscreen: true, :sandbox => "value"})
 
 or just use with default options
-
     $ video.embed_html5 #default: width: 425, height: 350, frameborder: 0
 
 ## LOGGING
 
 Tubeclip passes all logs through the logger variable on the class itself. In Rails context, assign the Rails logger to that variable to collect the messages
 (don't forget to set the level to debug):
-
     $ Tubeclip.logger = RAILS_DEFAULT_LOGGER
-
     $ RAILS_DEFAULT_LOGGER.level = Logger::DEBUG
 
 ## RUBY INTERPRETER COMPABILITY:
